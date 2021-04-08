@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login · Bootstrap v5.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="img/cpu.png" type="image/x-icon">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        #inputEmail{
+            margin-bottom: 0.55rem;
+        }
+    </style>
+
+</head>
+
+<body class="text-center">
+
+    <main class="form-signin">
+        <form>
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="black" class="bi bi-cpu-fill"
+                viewBox="0 0 16 16">
+                <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                <path
+                    d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z" />
+            </svg>
+            <h1 class="h3 mb-3 fw-normal">Login</h1><br>
+            <label for="inputEmail" class="visually-hidden">Endereço de E-mail</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Endereço de E-mail" required autofocus>
+            <label for="inputPassword" class="visually-hidden">Senha</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Lembrar de mim
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+            <p class="mt-5 mb-3 text-muted">&copy;2021</p>
+        </form>
+    </main>
+
+</body>
+
+</html>

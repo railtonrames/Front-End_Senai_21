@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="shortcut icon" href="img/cpu.png" type="image/x-icon">
+    <Style>
+        .btn-outline-success { /*Altera a cor e a cor da borda do botão outline-sucess*/ 
+            color: #000000;
+            border-color: #000000;
+        }
+        .btn-outline-success:hover { /*Altera a cor de fundo, cor e cor da borda do botão outline-sucess enquanto o mouse estiver em cima*/
+            background-color: #000000;
+            color: #ffffff;
+            border-color: rgb(255, 255, 255);
+        }
+        .carousel-item { /*Define a altura e a largura do carrossel*/
+            width: 100%;
+            height: 74vh;
+        }
+        .carousel-item img { /*Normaliza as imagens do carrossel*/
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .footer{
+            background-color: #E8ECEF; /*Força a alterar a cor do rodapé*/
+        }
+    </Style>
+    <title>Aula 18</title>
+</head>
+
+<body>
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!--Navbar definida como larga e com background escuro-->
+        <div class="container-fluid"> <!--Define tamanho fixo em todos os pontos de interrupção-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"> <!--Cria um botão indicando menu drop-down que fica visivel quando a largura fica muito estreita para o menu normal-->
+                <span class="navbar-toggler-icon"></span> <!--Icone indicando o menu-->
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-cpu-fill"
+                viewBox="0 0 16 16">
+                <path d="M6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                <path
+                    d="M5.5.5a.5.5 0 0 0-1 0V2A2.5 2.5 0 0 0 2 4.5H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2v1H.5a.5.5 0 0 0 0 1H2A2.5 2.5 0 0 0 4.5 14v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14h1v1.5a.5.5 0 0 0 1 0V14a2.5 2.5 0 0 0 2.5-2.5h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14v-1h1.5a.5.5 0 0 0 0-1H14A2.5 2.5 0 0 0 11.5 2V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5a.5.5 0 0 0-1 0V2h-1V.5zm1 4.5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3A1.5 1.5 0 0 1 6.5 5z" />
+            </svg> <!--Ícone externo do bootstrap para indicar logotipo-->
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03"> <!--Contrai os itens do menu drop-down e contrai os itens do menu em uma linha-->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0"> <!--Coluna cuja as classes formatam a navbar, colocam a margin-right como auto, colocam a margin-bottom como 0.5rem e definem margin-bottom como 0 em telas grandes-->
+                    <li class="nav-item"> <!--Linha que indica que é um item da navbar-->
+                        <a class="nav-link active" aria-current="page" href="#">Home</a> <!--Hyperlink ativo da navbar, indica que é a página atual em um conjunto de páginas e leva para o endereço definido como #-->
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Serviços</a> <!--Hyperlink da navbar-->
+                    </li>
+                    <li class="nav-item dropdown"> <!--Item do tipo dropdown-->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Produtos
+                        </a> <!--Hyperlink que funciona como um botão, quando clicada abre o itens ocultos-->
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown"> <!--Coluna com os itens ocultos do dropdown-->
+                            <li><a class="dropdown-item" href="#">Lista de Produtos</a></li> <!--Linha de um item do tipo dropdown-->
+                            <li><a class="dropdown-item" href="#">Categoria</a></li>
+                            <li>
+                                <hr class="dropdown-divider"> <!--Linha de divisão dentro do dropdown-->
+                            </li>
+                            <li><a class="dropdown-item" href="#">Produtos em Destaque</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cliente</a>
+                    </li>
+                </ul>
+                <form class="d-flex"> <!--Formulário que indica o display como flex-->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!--Carrinho-->
+                        <li class="me-auto" style="align-self: center;"> <!--Linha com margin-right auto e style forçando a se alinha ao centro-->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white"
+                                class="bi bi-box-seam" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z" />
+                            </svg>
+                            <span class="badge bg-warning text-dark">2</span> <!--Badge com background de aviso(laranja) e texto escuro-->
+                        </li>
+                        <!--Usuário-->
+                        <li class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                                    class="bi bi-person-badge" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path
+                                        d="M4.5 0A2.5 2.5 0 0 0 2 2.5V14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2.5A2.5 2.5 0 0 0 11.5 0h-7zM3 2.5A1.5 1.5 0 0 1 4.5 1h7A1.5 1.5 0 0 1 13 2.5v10.795a4.2 4.2 0 0 0-.776-.492C11.392 12.387 10.063 12 8 12s-3.392.387-4.224.803a4.2 4.2 0 0 0-.776.492V2.5z" />
+                                </svg>&nbspRailton Rames Sousa
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                                <li><a class="dropdown-item" href="form.html">Editar Perfil</a></li>
+                                <li><a class="dropdown-item" href="login.html">Login</a></li>
+                            </ul>
+                        </li>
+                        </li>
+                    </ul>
+
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!--Barra de Busca-->
+    <nav class="navbar navbar-light" style="background-color: #E8ECEF;">
+        <div class="container-fluid">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"> <!--Campo de entrada do tipo busca formatada como formulário de controle e com margin-right de 0.5rem-->
+                <button class="btn btn-outline-success" type="submit"> <!--Botão formatado conforme o css da classe btn-outline-sucess do tipo submit-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                    </svg>
+                </button>
+                <!--Segunda Forma
+                    <a href="?">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </a>
+                -->
+            </form>
+        </div>
+    </nav>
+
+    <!--Carrossel-->
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel"> <!--Carrossel do tipo slides com efeito fade-->
+        <div class="carousel-indicators"> <!--Indicadores do carrossel-->
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button> <!--Botão indicador do carrossel ativo-->
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button> <!--Botão indicador do carrossel-->
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner"> <!--Conteúdo do carrossel-->
+            <div class="carousel-item active" data-bs-interval="3000"> <!--Item ativo do carrossel que aguarda 3 segundos para passar para o próximo slide-->
+                <img src="img/porsche.jpg" class="d-block w-100" alt="Porsche"> <!--Imagem com display block com largura de 100% e texto alternativo-->
+            </div>
+            <div class="carousel-item" data-bs-interval="3000"> <!--Item do carrossel que aguarda 3 segundos para passar para o próximo slide-->
+                <img src="img/mustang.jpg" class="d-block w-100" alt="Mustang">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/458.jpg" class="d-block w-100" alt="Ferrari 458">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="img/aston.jpg" class="d-block w-100" alt="Aston">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"> <!--Botão de controle esquerdo para slide anterior-->
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span> <!--Ícone da seta de controle-->
+            <span class="visually-hidden">Previous</span> <!--Configurado para ficar visualmente escondido-->
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"> <!--Botão de controle direito para próximo slide-->
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!--Container-->
+    <footer class="footer"> <!--Indica o rodapé da página-->
+        <div class="container"> <!--Define um tamanho fixo-->
+            <div class="row"> <!--Formata a linha-->
+                <div class="col-12 text-center my-5" > <!--Divide em doze colunas, coloca o texto no centro e define a margin top e bottom em 5-->
+                    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square" style="font-size: 200%;"></i></a> <!--Ícone do facebook externo do font awesome com tamanho aumentado em 200%-->
+                    <a href="?"><i class="fas fa-phone-square-alt" style="font-size: 200%; color: red;"></i></a> <!--Ícone de telefone externo do font awesome com tamanho aumentado em 200%-->
+                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fab fa-whatsapp-square" style="font-size: 200%;color: green;" ></i></a> <!--Ícone do whatsapp externo do font awesome com tamanho aumentado em 200%-->
+                    <a href="mailto:someone@example.com"><i class="fas fa-envelope-square" style="font-size: 200%; color: darkblue;"></i></a> <!--Ícone do envelope externo do font awesome com tamanho aumentado em 200%-->
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
